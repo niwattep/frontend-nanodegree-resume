@@ -56,13 +56,13 @@ var project = {
 		{
 			"title" : "ABC",
 			"date" : "2013",
-			"Description" : "Not him old music think his found enjoy merry. Listening acuteness dependent at or an. Apartments thoroughly unsatiable terminated sex how themselves. She are ten hours wrong walls stand early. Domestic perceive on an ladyship extended received do. Why jennings our whatever his learning gay perceive. Is against no he without subject. Bed connection unreserved preference partiality not unaffected. Years merit trees so think in hoped we as. ",
+			"description" : "Not him old music think his found enjoy merry. Listening acuteness dependent at or an. Apartments thoroughly unsatiable terminated sex how themselves. She are ten hours wrong walls stand early. Domestic perceive on an ladyship extended received do. Why jennings our whatever his learning gay perceive. Is against no he without subject. Bed connection unreserved preference partiality not unaffected. Years merit trees so think in hoped we as. ",
 			"pic" : "images/pj01.jpg"
 		},
 		{
 			"title" : "DEF",
 			"date" : "2013",
-			"Description" : "In by an appetite no humoured returned informed. Possession so comparison inquietude he he conviction no decisively. Marianne jointure attended she hastened surprise but she. Ever lady son yet you very paid form away. He advantage of exquisite resolving if on tolerably. Become sister on in garden it barton waited on. ",
+			"description" : "In by an appetite no humoured returned informed. Possession so comparison inquietude he he conviction no decisively. Marianne jointure attended she hastened surprise but she. Ever lady son yet you very paid form away. He advantage of exquisite resolving if on tolerably. Become sister on in garden it barton waited on. ",
 			"pic" : "images/pj02.jpg"
 		}
 	]
@@ -96,8 +96,10 @@ if (bio.skills.length > 0) {
 	};	
 }
 
-$("#workExperience").append(HTMLworkStart);
+
 for (var i = 0; i < work.jobs.length; i++) {
+	$("#workExperience").append(HTMLworkStart);
+	
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
 	var formattedEmployerAndTitle = formattedEmployer + formattedTitle;
@@ -114,3 +116,22 @@ for (var i = 0; i < work.jobs.length; i++) {
 }
 
 $("#main").append(internationalizeButton);
+
+project.display = function() {
+	for (var i = 0; i < project.projects.length; i++) {
+		$("#projects").append(HTMLprojectStart);
+		
+		var formattedTitle = HTMLprojectTitle.replace("%data%", project.projects[i].title);
+		$(".project-entry:last").append(formattedTitle);
+		
+		var formattedDates = HTMLprojectDates.replace("%data%", project.projects[i].date);
+		$(".project-entry:last").append(formattedDates);
+		
+		var formattedDes = HTMLprojectDescription.replace("%data%", project.projects[i].description);
+		$(".project-entry:last").append(formattedDes);
+		
+		var formattedPic = HTMLprojectImage.replace("%data%", project.projects[i].pic);
+		$(".project-entry:last").append(formattedPic);
+	}
+}
+project.display();

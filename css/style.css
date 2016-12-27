@@ -219,3 +219,10 @@ span {
     display: block;
   }
 }
+
+/*add responsive image*/
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
