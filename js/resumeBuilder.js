@@ -112,3 +112,5 @@ for (var i = 0; i < work.jobs.length; i++) {
 	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
 	$(".work-entry:last").append(formattedDescription);
 }
+
+$("#main").append(internationalizeButton);
