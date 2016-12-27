@@ -1,5 +1,3 @@
-console.log("Can you see me?");
-
 var bio = {
 	"name" : "Niwat Jansutep",
 	"role" : "Full-stack Developer",
@@ -21,13 +19,13 @@ var education = {
 			"major" : "Maths-Art",
 			"degree" : "Secondary Education",
 			"city" : "Bangkok",
-			"year" : 2008
+			"year" : "2008-2013"
 		},
 		{
 			"name" : "Chulalongkorn University",
 			"major" : "BIT",
 			"degree" : "Undergraduate",
-			"year" : 2014,
+			"year" : "2014-Now",
 			"city" : "Bangkok",
 		}
 	],
@@ -40,15 +38,15 @@ var work = {
 			"employer" : "Udacity",
 			"title" : "Full-stack Developer",
 			"location" : "US",
-			"date" : 2018,
-			"description" : "Mostly front-end developer"
+			"date" : "Future",
+			"description" : "You disposal strongly quitting his endeavor two settling him. Manners ham him hearted hundred expense. Get open game him what hour more part. Adapted as smiling of females oh me journey exposed concern. Met come add cold calm rose mile what. Tiled manor court at built by place fanny. Discretion at be an so decisively especially. Exeter itself object matter if on mr in. "
 		},
 		{
 			"employer" : "J-Karn-Jeo",
 			"title" : "CEO",
 			"location" : "Bangkok",
-			"date" : 2013,
-			"description" : "I am a CEO, I have a power!"
+			"date" : "2013",
+			"description" : "Oh he decisively impression attachment friendship so if everything. Whose her enjoy chief new young. Felicity if ye required likewise so doubtful. On so attention necessary at by provision otherwise existence direction. Unpleasing up announcing unpleasant themselves oh do on. Way advantage age led listening belonging supposing. "
 		}
 	]
 }
@@ -57,14 +55,14 @@ var project = {
 	"projects" : [
 		{
 			"title" : "ABC",
-			"date" : 2017,
-			"Description" : "It is a test project",
+			"date" : "2013",
+			"Description" : "Not him old music think his found enjoy merry. Listening acuteness dependent at or an. Apartments thoroughly unsatiable terminated sex how themselves. She are ten hours wrong walls stand early. Domestic perceive on an ladyship extended received do. Why jennings our whatever his learning gay perceive. Is against no he without subject. Bed connection unreserved preference partiality not unaffected. Years merit trees so think in hoped we as. ",
 			"pic" : "images/197x148.gif"
 		},
 		{
 			"title" : "DEF",
-			"date" : 2017,
-			"Description" : "It is a test project",
+			"date" : "2013",
+			"Description" : "In by an appetite no humoured returned informed. Possession so comparison inquietude he he conviction no decisively. Marianne jointure attended she hastened surprise but she. Ever lady son yet you very paid form away. He advantage of exquisite resolving if on tolerably. Become sister on in garden it barton waited on. ",
 			"pic" : "images/197x148.gif"
 		}
 	]
