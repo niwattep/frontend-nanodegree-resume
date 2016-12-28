@@ -135,3 +135,5 @@ project.display = function() {
 	}
 }
 project.display();
+
+$("#mapDiv").append(googleMap);
