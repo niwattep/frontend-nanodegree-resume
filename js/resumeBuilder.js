@@ -68,54 +68,57 @@ var project = {
 	]
 }
 
-//Because there is "topContact" in header, if we use append(), Our name and role will appear below contacts. So use prepend instead.
-var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedHeaderRole);
+bio.display = function() {
+	//Because there is "topContact" in header, if we use append(), Our name and role will appear below contacts. So use prepend instead.
+	var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedHeaderRole);
 
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").prepend(formattedName);
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").prepend(formattedName);
 
-for (contact in bio.contacts) {
-	var formattedContact = HTMLcontactGeneric.replace("%contact%", contact);
-	formattedContact = formattedContact.replace("%data%", bio.contacts[contact]);
-	$("#topContacts").append(formattedContact);
+	for (contact in bio.contacts) {
+		var formattedContact = HTMLcontactGeneric.replace("%contact%", contact);
+		formattedContact = formattedContact.replace("%data%", bio.contacts[contact]);
+		$("#topContacts").append(formattedContact);
+	}
+
+	var formattedPic = HTMLbioPic.replace("%data%", bio.pic);
+	$("#header").append(formattedPic);
+
+	var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
+	$("#header").append(formattedMessage);
+
+	if (bio.skills.length > 0) {
+		$("#header").append(HTMLskillsStart);
+		
+		for (var i = 0; i < bio.skills.length; i++) {
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+			$("#skills").append(formattedSkill);
+		};	
+	}
 }
+bio.display();
 
-var formattedPic = HTMLbioPic.replace("%data%", bio.pic);
-$("#header").append(formattedPic);
-
-var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.message);
-$("#header").append(formattedMessage);
-
-if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
-	
-	for (var i = 0; i < bio.skills.length; i++) {
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-		$("#skills").append(formattedSkill);
-	};	
+work.display = function () {
+	for (var i = 0; i < work.jobs.length; i++) {
+		$("#workExperience").append(HTMLworkStart);
+		
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+		var formattedEmployerAndTitle = formattedEmployer + formattedTitle;
+		$(".work-entry:last").append(formattedEmployerAndTitle);
+		
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].date);
+		$(".work-entry:last").append(formattedDates);
+		
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+		$(".work-entry:last").append(formattedLocation);
+		
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+		$(".work-entry:last").append(formattedDescription);
+	}
 }
-
-
-for (var i = 0; i < work.jobs.length; i++) {
-	$("#workExperience").append(HTMLworkStart);
-	
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
-	var formattedEmployerAndTitle = formattedEmployer + formattedTitle;
-	$(".work-entry:last").append(formattedEmployerAndTitle);
-	
-	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].date);
-	$(".work-entry:last").append(formattedDates);
-	
-	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
-	$(".work-entry:last").append(formattedLocation);
-	
-	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
-	$(".work-entry:last").append(formattedDescription);
-}
-
-$("#main").append(internationalizeButton);
+work.display();
 
 project.display = function() {
 	for (var i = 0; i < project.projects.length; i++) {
@@ -135,8 +138,6 @@ project.display = function() {
 	}
 }
 project.display();
-
-$("#mapDiv").append(googleMap);
 
 education.display = function() {
 	for (var i = 0; i < education.schools.length; i++) {
@@ -159,3 +160,7 @@ education.display = function() {
 	}
 }
 education.display();
+
+$("#main").append(internationalizeButton);
+
+$("#mapDiv").append(googleMap);
