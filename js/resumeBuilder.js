@@ -137,3 +137,25 @@ project.display = function() {
 project.display();
 
 $("#mapDiv").append(googleMap);
+
+education.display = function() {
+	for (var i = 0; i < education.schools.length; i++) {
+		$("#education").append(HTMLschoolStart);
+		
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
+		$(".education-entry:last").append(formattedSchoolName);
+		
+		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+		$(".education-entry:last").append(formattedSchoolDegree);
+		
+		var formattedSchoolDate = HTMLschoolDates.replace("%data%", education.schools[i].year);
+		$(".education-entry:last").append(formattedSchoolDate);
+		
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].city);
+		$(".education-entry:last").append(formattedSchoolLocation);
+		
+		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
+		$(".education-entry:last").append(formattedSchoolMajor);
+	}
+}
+education.display();
