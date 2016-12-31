@@ -57,13 +57,13 @@ var project = {
 			"title" : "ABC",
 			"date" : "2013",
 			"description" : "Not him old music think his found enjoy merry. Listening acuteness dependent at or an. Apartments thoroughly unsatiable terminated sex how themselves. She are ten hours wrong walls stand early. Domestic perceive on an ladyship extended received do. Why jennings our whatever his learning gay perceive. Is against no he without subject. Bed connection unreserved preference partiality not unaffected. Years merit trees so think in hoped we as. ",
-			"pic" : "images/pj01.jpg"
+			"pic" : "images/pj01_re.jpg"
 		},
 		{
 			"title" : "DEF",
 			"date" : "2013",
 			"description" : "In by an appetite no humoured returned informed. Possession so comparison inquietude he he conviction no decisively. Marianne jointure attended she hastened surprise but she. Ever lady son yet you very paid form away. He advantage of exquisite resolving if on tolerably. Become sister on in garden it barton waited on. ",
-			"pic" : "images/pj02.jpg"
+			"pic" : "images/pj02_re.jpg"
 		}
 	]
 }
